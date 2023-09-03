@@ -1,11 +1,11 @@
-## Glove.new(player, glove, power, speed, ability)
+## Glove.new(Player, Glove, Power, Speed, Ability)
 > Creates new information for a glove.
 
-- **player:** `string`
-- **glove:** `string`
-- **power:** `number`
-- **speed:** `number`
-- **ability:** `string`
+- **Player:** `string`
+- **Glove:** `string`
+- **Power:** `number`
+- **Speed:** `number`
+- **Ability:** `string`
 
 ```lua
 local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
@@ -15,10 +15,10 @@ print(newGlove)
 
 ---
 
-## Glove:SetAbility(ability)
+## Glove:SetAbility(abilityName)
 > Sets the glove's ability.
 
-- **ability:** `string`
+- **abilityName:** `string`
  
 ```lua
 local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
