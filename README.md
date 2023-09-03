@@ -27,3 +27,4 @@ local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
 print(newGlove.Ability) -- Would print out "Blast"
 newGlove:SetAbility("Teleport")
 print(newGlove.Ability) -- Would print out "Teleport"
+```
