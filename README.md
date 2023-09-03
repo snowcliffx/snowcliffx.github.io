@@ -20,7 +20,10 @@ print(newGlove)
 ## Glove:SetAbility(ability)
 > Sets the glove's ability to ability.
 
-- **ability:** string.
+- **ability:** `string`
  
 ```lua
-loca
+local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
+print(newGlove.Ability) -- Would print out "Blast"
+newGlove:SetAbility("Teleport")
+print(newGlove.Ability) -- Would print out "Teleport"
