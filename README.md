@@ -1,5 +1,3 @@
-# GloveHandler Documentation
-
 ## Glove.new(player, glove, power, speed, ability)
 > Creates new information for a glove.
 
