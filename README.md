@@ -11,7 +11,7 @@
 
 ```lua
 local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
-print(newGlove) -[[Would print out: "{["Player"] = "SnowCliffx", ["Glove"] = "Default", ["Power"] = 25, ["Speed"] = 50, ["Ability"] = "Blast"}"]]-
+print(newGlove) --[[Would print out: "{["Player"] = "SnowCliffx", ["Glove"] = "Default", ["Power"] = 25, ["Speed"] = 50, ["Ability"] = "Blast"}"]]-
 ```
 
 ---
