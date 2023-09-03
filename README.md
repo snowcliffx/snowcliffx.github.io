@@ -18,7 +18,7 @@ print(newGlove)
 ---
 
 ## Glove:SetAbility(ability)
-> Sets the glove's ability to ability.
+> Sets the glove's ability.
 
 - **ability:** `string`
  
