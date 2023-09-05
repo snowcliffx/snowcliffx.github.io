@@ -1,6 +1,7 @@
 ## Glove.new(Glove, Power, Speed, Ability, AbilityCooldown)
 > Creates new information for a glove. This should be used inside of a glove's server script.
 > Also has a default value called "EquipState", which is set to false no matter what.
+> d
 
 - **Glove:** `string` (Defaults to "Default")
 - **Ability:** `string` (Defaults to "None")
