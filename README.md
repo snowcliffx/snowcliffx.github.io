@@ -110,4 +110,11 @@ local newGlove = Glove.new("Default", "SpeedBoost", 30, 30, 5)
 newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoost" and power remains as 30.
 ```
 
+> You also have access to individual set methods:
+- **Glove:SetGlove**
+- **Glove:SetAbility**
+- **Glove:SetPower**
+- **Glove:SetSpeed**
+- **Glove:SetCooldown**
+
 ---
