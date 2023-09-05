@@ -55,16 +55,6 @@ local tool = script.Parent
 local handle = tool.Handle
 
 glove.new("Killstreak", nil, 20, 50, 0)
-
-GloveTool.Activated:Connect(function()
-	local TimeStamp = os.clock()
-	if TimeStamp > SLAP_DEBOUNCE then
-		SLAP_DEBOUNCE = TimeStamp + 50 / glove.Speed
-		glove:CreateHitbox(handle)
-	else
-		print("Slap cooldown: ".. SLAP_DEBOUNCE - os.clock())
-    end
-end)
 ```
 
 ---
