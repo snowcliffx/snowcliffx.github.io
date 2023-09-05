@@ -90,7 +90,7 @@ end)
 ---
 
 ## Glove:SetInfo(Glove, Ability, Power, Speed, AbilityCooldown)
-> Re-creates the glove info.
+> Bulk re-creates glove info.
 
 - **Glove:** `string`
 - **Ability:** `string`
