@@ -80,3 +80,5 @@ print(newGlove.Ability) -- Would print out "Blast"
 newGlove:SetAbility("Teleport")
 print(newGlove.Ability) -- Would print out "Teleport"
 ```
+
+---
