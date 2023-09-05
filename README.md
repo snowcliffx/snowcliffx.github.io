@@ -57,7 +57,7 @@ end)
 local tool = script.Parent
 local handle = tool.Handle
 
-glove.new("Killstreak", nil, 20, 50, 0)
+Glove.new("Killstreak", nil, 20, 50, 0)
 
 tool.Activated:Connect(function()
     glove:CreateHitbox(handle)
@@ -83,7 +83,7 @@ end)
 
 ```lua
 tool.Unequipped:Connect(function()
-    newglove:UnEquipped()
+    newGlove:UnEquipped()
 end)
 ```
 
