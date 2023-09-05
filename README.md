@@ -14,7 +14,7 @@ print(newGlove)
 -- Would print out "{["Player"] = "SnowCliffx", ["Glove"] = "Default", ["Ability"] = "Blast", ["Power"] = 25, ["Speed"] = 50, ["AbilityCooldown"] = 10}"
 ```
 
-> You have to use "nil" as an argument to set it to the default value.
+> You have to use =="nil"== as an argument to set it to the default value.
 
 ```lua
 local newGlove = Glove.new(nil, nil, "Teleport", nil, 40, 20)
