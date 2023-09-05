@@ -1,4 +1,4 @@
-## Glove.new(Glove, Power, Speed, Ability, AbilityCooldown)
+## Glove.new(Glove, Ability, Power, Speed, AbilityCooldown)
 > Creates new information for a glove. This should be used inside of a glove's server script.
 > Also has a default value called "EquipState", which is set to false no matter what.
 
@@ -89,14 +89,25 @@ end)
 
 ---
 
-## Glove:SetAbility(Ability)
-> Sets the glove's ability.
+## Glove:SetInfo(Glove, Ability, Power, Speed, AbilityCooldown)
+> Re-creates the glove info.
 
+- **Glove:** `string`
 - **Ability:** `string`
- 
+- **Power:** `number`
+- **Speed:** `number`
+- **AbilityCooldown:** `number`
+
 ```lua
-local newGlove = Glove.new("aGlove", "Blast", 25, 50, 5)
-print(newGlove.Ability) -- Would print out "Blast"
-newGlove:SetAbility("Teleport")
-print(newGlove.Ability) -- Would print out "Teleport"
+local newGlove = Glove.new("Default", "SpeedBoost", 50, 50, 10)
+newGlove:SetInfo("Killstreak", "None", 40, 40, 0)
 ```
+
+> You have to use **"nil"** as an argument to keep it as it is.
+
+```lua
+local newGlove = Glove.new("Default", "SpeedBoost", 30, 30, 5)
+newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoost" and power remains as 30.
+```
+
+---
