@@ -55,6 +55,10 @@ local tool = script.Parent
 local handle = tool.Handle
 
 glove.new("Killstreak", nil, 20, 50, 0)
+
+tool.Activated:Connect(function()
+    glove:CreateHitbox(handle)
+end)
 ```
 
 ---
