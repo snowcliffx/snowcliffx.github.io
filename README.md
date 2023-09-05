@@ -8,6 +8,8 @@
 - **Speed:** `number` (Defaults to 50)
 - **AbilityCooldown:** `number` (Defaults to 10)
 
+> If you required the ModuleScript as "GloveHandler" you have to use GloveHandler.new
+
 ```lua
 local newGlove = Glove.new("Default", "Blast", 25, 50, 20)
 print(newGlove)
@@ -64,6 +66,29 @@ end)
 
 ---
 
+## Glove:Equipped()
+> Sets the glove's "EquipState" value to true.
+
+```lua
+local tool = script.Parent
+local newGlove = Glove.new("leGlove", nil, 10, 10, 10)
+
+tool.Equipped:Connect(function()
+    newGlove:Equipped()
+end)
+```
+
+## Glove:UnEquipped()
+> Sets the glove's "EquipState" value to false.
+
+```lua
+tool.Unequipped:Connect(function()
+    newglove:UnEquipped()
+end)
+```
+
+---
+
 ## Glove:SetAbility(Ability)
 > Sets the glove's ability.
 
@@ -75,6 +100,3 @@ print(newGlove.Ability) -- Would print out "Blast"
 newGlove:SetAbility("Teleport")
 print(newGlove.Ability) -- Would print out "Teleport"
 ```
-
----
-dd
