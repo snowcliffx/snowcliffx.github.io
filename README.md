@@ -111,10 +111,10 @@ newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoo
 ```
 
 > You also have access to individual set methods:
-- **Glove:SetGlove**
-- **Glove:SetAbility**
-- **Glove:SetPower**
-- **Glove:SetSpeed**
-- **Glove:SetCooldown**
+- **Glove:SetGlove(gloveName)**
+- **Glove:SetAbility(abilityName)**
+- **Glove:SetPower(powerValue)**
+- **Glove:SetSpeed(speedValue)**
+- **Glove:SetCooldown(cooldownValue)**
 
 ---
