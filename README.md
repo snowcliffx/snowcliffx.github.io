@@ -63,7 +63,7 @@ GloveTool.Activated:Connect(function()
 		glove:CreateHitbox(handle)
 	else
 		print("Slap cooldown: ".. SLAP_DEBOUNCE - os.clock())
-	end
+    end
 end)
 ```
 
@@ -75,7 +75,7 @@ end)
 - **Ability:** `string`
  
 ```lua
-local newGlove = Glove.new("SnowCliffx", "Default", 25, 50, "Blast")
+local newGlove = Glove.new("aGlove", "Blast", 25, 50, 5)
 print(newGlove.Ability) -- Would print out "Blast"
 newGlove:SetAbility("Teleport")
 print(newGlove.Ability) -- Would print out "Teleport"
