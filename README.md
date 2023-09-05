@@ -8,7 +8,7 @@
 - **Speed:** `number` (Defaults to 50)
 - **AbilityCooldown:** `number` (Defaults to 10)
 
-> If you required the ModuleScript as "GloveHandler" you have to use GloveHandler.new
+> If you required the ModuleScript as something else like "GloveHandler" you have to use GloveHandler.new
 
 ```lua
 local newGlove = Glove.new("Default", "Blast", 25, 50, 20)
