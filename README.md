@@ -102,10 +102,11 @@ newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoo
 
 ---
 
-## Glove:CreateHitbox(Handle)
-> Creates a new hitbox at the handle's location and deletes it after 0.5 seconds. The cooldown is calculated with (50 / GloveSpeed).
+## Glove:CreateHitbox(Handle, debrisTime)
+> Creates a new hitbox at the handle's location and deletes it after debrisTime (seconds). The cooldown is calculated with 50/GloveSpeed.
 
-- **Handle:** `Instance` (This should usually be the HAND part of the glove.)
+- **Handle:** `Instance` (This should usually be the HAND part of the glove)
+- **debrisTime:** `number` (Defaults to 1)
 
 ```lua
 local tool = script.Parent
@@ -114,7 +115,7 @@ local handle = tool.Handle
 Glove.new("Killstreak", nil, 20, 50, 0)
 
 tool.Activated:Connect(function()
-    glove:CreateHitbox(handle)
+    glove:CreateHitbox(handle, 0.5)
 end)
 ```
 
