@@ -1,12 +1,14 @@
 ## Glove.new(Glove, Ability, Power, Speed, AbilityCooldown)
 > Creates new information for a glove. This should be used inside of a glove's server script.
-> Also has a default value called "EquipState" which is set to false no matter what.
 
 - **Glove:** `string` (Defaults to "Default")
 - **Ability:** `string` (Defaults to "None")
 - **Power:** `number` (Defaults to 50)
 - **Speed:** `number` (Defaults to 50)
 - **AbilityCooldown:** `number` (Defaults to 10)
+
+- **AbilityState:** `boolean` (Default value, false)
+- **EquipState:** `boolean` (Default value, false)
 
 > If you required the ModuleScript as something else like "blabla" you have to use blabla.new().
 
@@ -71,7 +73,7 @@ end)
 
 ---
 
-## Glove:SetInfo(Glove, Ability, Power, Speed, AbilityCooldown)
+## Glove:SetInfo(Glove, Ability, Power, Speed, AbilityCooldown, AbilityState)
 > Bulk re-creates glove info.
 
 - **Glove:** `string`
@@ -79,6 +81,7 @@ end)
 - **Power:** `number`
 - **Speed:** `number`
 - **AbilityCooldown:** `number`
+- **AbilityState:** `boolean`
 
 ```lua
 local newGlove = Glove.new("Default", "SpeedBoost", 50, 50, 10)
@@ -88,8 +91,8 @@ newGlove:SetInfo("Killstreak", "None", 40, 40, 0)
 > You have to use **"nil"** as an argument to keep it as it is.
 
 ```lua
-local newGlove = Glove.new("Default", "SpeedBoost", 30, 30, 5)
-newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoost" and power remains as 30.
+local newGlove = Glove.new("Default", "SpeedBoost", 30, 30, 5, false)
+newGlove:SetInfo("God's Hand", nil, nil, 50, 30, true) -- Ability remains as "SpeedBoost" and power remains as 30.
 ```
 
 > You also have access to individual set methods:
@@ -98,7 +101,8 @@ newGlove:SetInfo("God's Hand", nil, nil, 50, 30) -- Ability remains as "SpeedBoo
 - **Glove:SetAbility(abilityName)**
 - **Glove:SetPower(powerValue)**
 - **Glove:SetSpeed(speedValue)**
-- **Glove:SetCooldown(cooldownValue)**
+- **Glove:SetAbilityCooldown(cooldownValue)**
+- **Glove:SetAbilityState(stateValue)**
 
 ---
 
