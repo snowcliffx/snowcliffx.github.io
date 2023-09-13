@@ -106,10 +106,10 @@ newGlove:SetInfo("God's Hand", nil, nil, 50, 30, true) -- Ability remains as "Sp
 
 ---
 
-## Glove:CreateHitbox(Handle, debrisTime)
+## Glove:CreateHitbox(handle, debrisTime)
 > Creates a new hitbox at the handle's location and deletes it after debrisTime (seconds). The cooldown is calculated with 50/GloveSpeed.
 
-- **Handle:** `Instance` (This should usually be the HAND part of the glove)
+- **handle:** `Instance` (This should usually be the HAND part of the glove)
 - **debrisTime:** `number` (Defaults to 1)
 
 ```lua
@@ -124,3 +124,10 @@ end)
 ```
 
 ---
+
+## Glove:UseAbility(character, reverseState, ...)
+> Uses ability based on Glove.Ability and Glove.AbilityCooldown, all abilities are configured in AbilityHandler.
+
+- **character:** `Character`
+- **reverseState:** `boolean` (if true, reverses Abilitystate)
+- **...:** `any` (any other arguments)
