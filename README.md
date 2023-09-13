@@ -55,7 +55,7 @@ end)
 
 ```lua
 local tool = script.Parent
-local newGlove = Glove.new("leGlove", nil, 10, 10, 10)
+local newGlove = Glove.new("Thanos", nil, 10, 10, 10)
 
 tool.Equipped:Connect(function()
     newGlove:Equipped()
