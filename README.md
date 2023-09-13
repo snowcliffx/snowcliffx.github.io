@@ -97,12 +97,12 @@ newGlove:SetInfo("God's Hand", nil, nil, 50, 30, true) -- Ability remains as "Sp
 
 > You also have access to individual set methods:
 
-- **Glove:SetGlove(gloveName)**
-- **Glove:SetAbility(abilityName)**
-- **Glove:SetPower(powerValue)**
-- **Glove:SetSpeed(speedValue)**
-- **Glove:SetAbilityCooldown(cooldownValue)**
-- **Glove:SetAbilityState(stateValue)**
+- **Glove:SetGlove(gloveName: `string`)**
+- **Glove:SetAbility(abilityName: `string`)**
+- **Glove:SetPower(powerValue: `number`)**
+- **Glove:SetSpeed(speedValue: `number`)**
+- **Glove:SetAbilityCooldown(cooldownValue: `number`)**
+- **Glove:SetAbilityState(stateValue: `boolean`)**
 
 ---
 
