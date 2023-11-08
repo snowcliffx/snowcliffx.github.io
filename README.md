@@ -115,7 +115,7 @@ end
 
 ---
 
-GloveHandler:GetRemainingCooldown(player, cooldownType)
+## GloveHandler:GetRemainingCooldown(player, cooldownType)
 > Returns the cooldown of a player for the respective cooldown type. Returns a `number` value.
 
 - **player:** `Player`
@@ -123,7 +123,7 @@ GloveHandler:GetRemainingCooldown(player, cooldownType)
 
 ---
 
-GloveHandler:Slap(player, Config, targetPart)
+## GloveHandler:Slap(player, Config, targetPart)
 > Does a slappy slap. TargetPart should usually be the glove's hand.
 
 - **player:** `Player`
@@ -133,7 +133,7 @@ GloveHandler:Slap(player, Config, targetPart)
 > NOTE THAT YOU DO NOT HAVE TO MANUALLY SET COOLDOWNS, THE FUNCTION ALREADY DOES IT FOR YOU.
 ---
 
-GloveHandler:Ability(player, Config)
+## GloveHandler:Ability(player, Config)
 > Executes whatever ability is written in the Config.
 
 - **player:** `Player`
