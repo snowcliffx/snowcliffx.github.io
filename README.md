@@ -1,38 +1,8 @@
-## Glove.new(Glove, Ability, Power, Speed, AbilityCooldown)
-> Creates new information for a glove. This should be used inside of a glove's server script.
-
-- **Glove:** `string` (Defaults to "Default")
-- **Ability:** `string` (Defaults to "None")
-- **Power:** `number` (Defaults to 50)
-- **Speed:** `number` (Defaults to 50)
-- **AbilityCooldown:** `number` (Defaults to 10)
-
-- **AbilityState:** `boolean` (Default value, false)
-- **EquipState:** `boolean` (Default value, false)
-
-> If you required the ModuleScript as something else like "blabla" you have to use blabla.new().
-
-```lua
-local newGlove = Glove.new("Default", "Blast", 25, 50, 20)
-print(newGlove)
--- Would print out "{["Glove"] = "Default", ["Ability"] = "Blast", ["Power"] = 25, ["Speed"] = 50, ["AbilityCooldown"] = 20}"
-```
-
-> You have to use **"nil"** as an argument to set it to the default value.
-
-```lua
-local newGlove = Glove.new(nil, "Teleport", nil, 40, nil)
-print(newGlove)
--- Would print out "{["Glove"] = "Default", ["Ability"] = "Teleport", ["Power"] = 50, ["Speed"] = 40, ["AbilityCooldown"] = 10}"
-```
-
----
-
-## Glove.give(Player, Glove)
+## GloveHandler.Give(player, gloveName)
 > Puts the glove as a tool in the Player's backpack. This should usually be used in a server script inside of a portal.
 
-- **Player:** `Player`
-- **Glove:** `string`
+- **player:** `Player`
+- **gloveName:** `String`
 
 ```lua
 local Players = game:GetService("Players")
@@ -47,87 +17,54 @@ portalPart.Touched:Connect(function(hit)
     end
 end)
 ```
-
 ---
 
-## Glove:Equipped()
-> Sets the glove's "EquipState" value to true.
+## GloveHandler:HasConfig(player)
+> Checks if the player already has a glove config. Returns a bool value.
+
+- **player:** `Player`
 
 ```lua
-local tool = script.Parent
-local newGlove = Glove.new("Thanos", nil, 10, 10, 10)
-
-tool.Equipped:Connect(function()
-    newGlove:Equipped()
-end)
-```
-
-## Glove:UnEquipped()
-> Sets the glove's "EquipState" value to false.
-
-```lua
-tool.Unequipped:Connect(function()
-    newGlove:UnEquipped()
-end)
+if GloveHandler:HasConfig(player) then
+    print("player has config.")
+else
+    print("player doesn't have config.")
+end
 ```
 
 ---
 
-## Glove:SetInfo(Glove, Ability, Power, Speed, AbilityCooldown, AbilityState)
-> Bulk re-creates glove info.
+## GloveHandler:GetConfig(player)
+> Returns the configuration instance of a player if they have one, otherwise returns false.
 
-- **Glove:** `string`
-- **Ability:** `string`
-- **Power:** `number`
-- **Speed:** `number`
-- **AbilityCooldown:** `number`
-- **AbilityState:** `boolean`
+- **player:** `Player`
 
 ```lua
-local newGlove = Glove.new("Default", "SpeedBoost", 50, 50, 10)
-newGlove:SetInfo("Killstreak", "None", 40, 40, 0)
-```
-
-> You have to use **"nil"** as an argument to keep it as it is.
-
-```lua
-local newGlove = Glove.new("Default", "SpeedBoost", 30, 30, 5, false)
-newGlove:SetInfo("God's Hand", nil, nil, 50, 30, true) -- Ability remains as "SpeedBoost" and power remains as 30.
-```
-
-> You also have access to individual set methods:
-
-- **Glove:SetGlove(gloveName: `string`)**
-- **Glove:SetAbility(abilityName: `string`)**
-- **Glove:SetPower(powerValue: `number`)**
-- **Glove:SetSpeed(speedValue: `number`)**
-- **Glove:SetAbilityCooldown(cooldownValue: `number`)**
-- **Glove:SetAbilityState(stateValue: `boolean`)**
-
----
-
-## Glove:CreateHitbox(handle, debrisTime)
-> Creates a new hitbox at the handle's location and deletes it after debrisTime (seconds). The cooldown is calculated with 50/GloveSpeed.
-
-- **handle:** `Instance` (This should usually be the HAND part of the glove)
-- **debrisTime:** `number` (Defaults to 1)
-
-```lua
-local tool = script.Parent
-local handle = tool.Handle
-
-Glove.new("Killstreak", nil, 20, 50, 0)
-
-tool.Activated:Connect(function()
-    glove:CreateHitbox(handle, 0.5)
-end)
+local Config = GloveHandler:GetConfig(player)
+if Config then
+    Config:Destroy()
+end
 ```
 
 ---
 
-## Glove:UseAbility(character, reverseState, ...)
-> Uses ability based on Glove.Ability and Glove.AbilityCooldown, all abilities are configured in AbilityHandler.
+## GloveHandler:CreateConfig(player, AttributeTable)
+> Creates a new configuration instance with the attributes in AttributeTable. Also returns the instance it creates.
 
-- **character:** `Character`
-- **reverseState:** `boolean` (if true, reverses Abilitystate)
-- **...:** `any` (any other arguments)
+- **player:** `Player`
+- **AttributeTable:** `Table (Dictionary)`
+
+```lua
+local AttributesTable = {
+    Ability = "Fart",
+    Power = 100,
+    Kills = 5,
+    SlapCooldown = 2,
+}
+
+local Config = GloveHandler:CreateConfig(player, AttributesTable)
+```
+
+> You do not have to specify every attribute in AttributesTable. The ones that aren't specified will be their default values.
+> You have to type the exact names of the attributes in AttributesTable. Currently, there are 9 attributes, and possibly more to come.
+> These attributes are: `Ability`,`AbilityCooldown`,`AbilityState`,`CanAbility`,`CanSlap`,`EquipState`,`Kills`,`Power`,`SlapCooldown`.
