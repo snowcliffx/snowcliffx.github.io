@@ -142,16 +142,27 @@ This is for GloveConfig. There are TEN attributes at the moment, and possibly mo
 To begin with, you HAVE to write the exact name of these attributes in AttributesList (for CreateConfig and ChangeConfig functions).
 
 Ability `String`: This defines the ability of the glove. It is used to determine what the glove does when it's activated.
+
 AbilityCooldown `Number`: The duration of the debounce whenever you activate the ability.
+
 AbilityState `Bool`: The state of the ability. As long as the ability is ongoing, this should be true.
+
 CanAbility `Bool`: Whether the player can use their ability at the moment.
+
 CanSlap `Bool`: Whether the player can slap at the moment.
+
 EquipState `Bool`: True while the glove is equipped, false while it's not. Currently doesn't have a use.
+
 Kills `Number`: The number of kills you've gained in your current lifetime. Especially useful for Killstreak etc.
+
 Power `Number`: How strong the knockback will be. The default is 50.
+
 SlapCooldown `Number`: The duration of the debounce whenever you slap.
+
 SlapSpeed `Number`: The speed of the glove's slap animation and how fast the hitbox gets deleted. The default is 50.
 
 For Power and SlapSpeed, think of 50 as the default value. If you want to make it twice as strong, make it 100.
+
 For SlapSpeed, 50 (aka the default value) means the animation will be over in 1 second, and the hitbox will be deleted in 1 second.
+
 This means if you put it to 100, the animation will be over in 0.5 seconds and the hitbox will be deleted in 0.5 seconds.
