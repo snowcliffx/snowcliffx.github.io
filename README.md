@@ -67,4 +67,4 @@ local Config = GloveHandler:CreateConfig(player, AttributesTable)
 
 > You do not have to specify every attribute in AttributesTable. The ones that aren't specified will be their default values.
 > You have to type the exact names of the attributes in AttributesTable. Currently, there are 9 attributes, and possibly more to come.
-> These attributes are: `Ability`,`AbilityCooldown`,`AbilityState`,`CanAbility`,`CanSlap`,`EquipState`,`Kills`,`Power`,`SlapCooldown`.
+> These attributes are: `Ability`, `AbilityCooldown`, `AbilityState`, `CanAbility`, `CanSlap`, `EquipState`, `Kills`, `Power`,`SlapCooldown`.
