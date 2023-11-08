@@ -139,6 +139,7 @@ end
 ---
 # READ
 This is for GloveConfig. There are TEN attributes at the moment, and possibly more to come. This will go over what they're used for.
+
 To begin with, you HAVE to write the exact name of these attributes in AttributesList (for CreateConfig and ChangeConfig functions).
 
 ---
