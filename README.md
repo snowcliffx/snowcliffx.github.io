@@ -126,6 +126,7 @@ end
 - **targetPart:** `Part`
 
 > NOTE THAT YOU DO NOT HAVE TO MANUALLY SET COOLDOWNS, THE FUNCTION ALREADY DOES IT FOR YOU.
+> 
 ---
 
 ## GloveHandler:Ability(player, Config)
@@ -137,6 +138,7 @@ end
 > NOTE THAT YOU DO NOT HAVE TO MANUALLY SET COOLDOWNS, THE FUNCTION ALREADY DOES IT FOR YOU.
 
 ---
+
 # READ
 This is for GloveConfig. There are TEN attributes at the moment, and possibly more to come. This will go over what they're used for.
 
