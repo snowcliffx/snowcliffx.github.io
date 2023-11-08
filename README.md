@@ -20,7 +20,7 @@ end)
 ---
 
 ## GloveHandler:HasConfig(player)
-> Checks if the player already has a glove config. Returns a bool value.
+> Checks if the player already has a glove config. Returns a `bool` value.
 
 - **player:** `Player`
 
@@ -49,7 +49,7 @@ end
 ---
 
 ## GloveHandler:CreateConfig(player, AttributeTable)
-> Creates a new configuration instance with the attributes in AttributeTable. Also returns the instance it creates.
+> Creates a new configuration instance with the attributes in AttributeTable. Also returns the `Configuration` it creates.
 
 - **player:** `Player`
 - **AttributeTable:** `Table (Dictionary)`
@@ -66,8 +66,8 @@ local Config = GloveHandler:CreateConfig(player, AttributesTable)
 ```
 
 > You do not have to specify every attribute in AttributesTable. The ones that aren't specified will be their default values.
-> You have to type the exact names of the attributes in AttributesTable. Currently, there are 9 attributes, and possibly more to come.
-> These attributes are: `Ability`, `AbilityCooldown`, `AbilityState`, `CanAbility`, `CanSlap`, `EquipState`, `Kills`, `Power`, `SlapCooldown`.
+> You have to type the exact names of the attributes in AttributesTable. Currently, there are 10 attributes, and possibly more to come.
+> These attributes are: `Ability`, `AbilityCooldown`, `AbilityState`, `CanAbility`, `CanSlap`, `EquipState`, `Kills`, `Power`, `SlapCooldown`, `SlapSpeed`.
 
 ---
 
@@ -92,7 +92,51 @@ end
 ```
 
 > You do not have to specify every attribute in AttributesTable. The ones that aren't specified will be their previous values.
-> You have to type the exact names of the attributes in AttributesTable. Currently, there are 9 attributes, and possibly more to come.
-> These attributes are: `Ability`, `AbilityCooldown`, `AbilityState`, `CanAbility`, `CanSlap`, `EquipState`, `Kills`, `Power`, `SlapCooldown`.
+> You have to type the exact names of the attributes in AttributesTable. Currently, there are 10 attributes, and possibly more to come.
+> These attributes are: `Ability`, `AbilityCooldown`, `AbilityState`, `CanAbility`, `CanSlap`, `EquipState`, `Kills`, `Power`, `SlapCooldown`, `SlapSpeed`.
 > Don't use this if you only want to change one attribute, for that use Config:SetAttribute() instead.
 
+---
+
+## GloveHandler:SetCooldown(player, cooldownTime, cooldownType)
+> Sets a cooldown for a player.
+
+- **player:** `Player`
+- **cooldownTime:** `Number`
+- **cooldownType:** `String` **("Slap" or "Ability")**
+
+---
+
+## GloveHandler:IsOnCooldown(player, cooldownType)
+> Checks if a player is on cooldown for the respective cooldown type. Returns a `bool` value.
+
+- **player:** `Player`
+- **cooldownType:** `String` **("Slap" or "Ability")**
+
+---
+
+GloveHandler:GetRemainingCooldown(player, cooldownType)
+> Returns the cooldown of a player for the respective cooldown type. Returns a `number` value.
+
+- **player:** `Player`
+- **cooldownType:** `String` **("Slap" or "Ability")**
+
+---
+
+GloveHandler:Slap(player, Config, targetPart)
+> Does a slappy slap. TargetPart should usually be the glove's hand.
+
+- **player:** `Player`
+- **Config:** `Configuration`
+- **targetPart:** `Part`
+
+> NOTE THAT YOU DO NOT HAVE TO MANUALLY SET COOLDOWNS, THE FUNCTION ALREADY DOES IT FOR YOU.
+---
+
+GloveHandler:Ability(player, Config)
+> Executes whatever ability is written in the Config.
+
+- **player:** `Player`
+- **Config:** `Configuration`
+
+> NOTE THAT YOU DO NOT HAVE TO MANUALLY SET COOLDOWNS, THE FUNCTION ALREADY DOES IT FOR YOU.
